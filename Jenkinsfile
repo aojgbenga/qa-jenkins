@@ -13,7 +13,8 @@ pipeline {
             steps {
                 sh 'echo "Testing..."'
                 sh 'pwd'
-                // Example of creating and moving a file, simulating test artifacts
+                // Ensure the directory exists before moving the file
+                sh 'mkdir -p test_directory'
                 sh 'touch test.txt'
                 sh 'mv test.txt test_directory/'
             }
