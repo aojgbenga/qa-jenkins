@@ -5,14 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'echo "Simulating build process..."'
-                // If you have actual build commands, add them here (e.g., 'mvn compile')
+                // 'mvn compile'
             }
         }
 
         stage('Test') {
             steps {
                 sh 'echo "Simulating test process..."'
-                // If you have actual test commands, add them here (e.g., 'mvn test')
+                //'mvn test'
             }
         }
 
