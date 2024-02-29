@@ -1,35 +1,26 @@
 pipeline {
-    agent any
+    agent any 
 
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Building..."'
-                sh 'ls -la'
+                sh 'echo "Simulating build process..."'
+                // If you have actual build commands, add them here (e.g., 'mvn compile')
             }
         }
 
         stage('Test') {
             steps {
-                sh 'echo "Testing..."'
-                sh 'pwd'
-                // Ensure the directory exists before moving the file
-                sh 'mkdir -p test_directory'
-                sh 'touch test.txt'
-                sh 'mv test.txt test_directory/'
+                sh 'echo "Simulating test process..."'
+                // If you have actual test commands, add them here (e.g., 'mvn test')
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'echo "Deploying..."'
-                // Assuming docker is installed and configured on Jenkins agent
-                // Clone your project repository; in this case, using a generic Git command as a placeholder
-                sh 'git clone https://gitlab.com/Reece-Elder/dockerfileexercise.git'
-                sh 'cd dockerfileexercise'
-                // Build and run your Docker container
-                sh 'docker build -t myapp .'
-                sh 'docker run -d -p 80:80 myapp'
+                sh 'echo "Simulating deployment process..."'
+                sh 'mkdir deploy-output'  // Create a sample output directory
+                sh 'touch deploy-output/deployment-artifact.txt' // Create a sample artifact
             }
         }
     }
